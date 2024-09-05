@@ -1,35 +1,55 @@
+// screens/ProfileScreen.js
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet,SafeAreaView, View } from 'react-native';
+import Greeting from '../components/Greeting';
+import CommunitiesJoined from '../components/CommunitesJoined';
+import UpcomingEvents from '../components/UpcomingEvents';
+import SkillBuddies from '../components/SkillBuddies';
+import CalendarWithEvents from '../components/CalendarWithEvents';
+import { Card } from 'react-native-paper';
 
 const ProfileScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Profile Screen</Text>
-      <View style={styles.profilePlaceholder}>
-        <Text>User Profile Information will be displayed here</Text>
-      </View>
-    </View>
+    <SafeAreaView style={{marginTop:14}} >
+    <ScrollView contentContainerStyle={styles.container}>
+      {/* Greeting Section */}
+    <View style={{marginTop:14}}>
+        <Greeting />
+        </View>
+
+      {/* Communities Joined Section */}
+      <Card style={styles.card}>
+        <CommunitiesJoined />
+      </Card>
+
+
+      {/* Upcoming Events Section */}
+      <Card style={styles.card}>
+        <UpcomingEvents />
+      </Card>
+
+      {/* Skill Buddies Section */}
+      <Card style={styles.card}>
+        <SkillBuddies />
+      </Card>
+    </ScrollView>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexGrow: 1,
+    padding: 10,
+    backgroundColor: '#fff',
+
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  profilePlaceholder: {
-    height: 300,
-    width: '90%',
-    backgroundColor: '#f5f5f5',
-    justifyContent: 'center',
-    alignItems: 'center',
+  card: {
+    marginBottom: 15,
     borderRadius: 10,
-    marginTop: 20,
+    padding: 15,
+    elevation: 3,
+    backgroundColor: '#ffffff',
   },
 });
 
