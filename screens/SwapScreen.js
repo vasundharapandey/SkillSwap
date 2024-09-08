@@ -48,7 +48,7 @@ const SwapScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Skill Swap</Text>
+      {/* <Text style={styles.title}>Skill Swap</Text> */}
       <TextInput
         style={styles.searchInput}
         placeholder="Search by name or skill (e.g., Dance, John)"
